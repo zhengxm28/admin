@@ -1,0 +1,3 @@
+server:
+  context-path: admin
+  port: 80
