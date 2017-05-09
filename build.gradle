@@ -70,8 +70,9 @@ project(':admin-common') {
 
 project(':admin-service') {
     dependencies {
-        compile "org.springframework.boot:spring-boot-starter--data-jpa"
-        compile "org.springframework.boot:spring-boot-starter--data-redis"
+    	compile "mysql:mysql-connector-java:6.0.6"
+        compile "org.springframework.boot:spring-boot-starter-data-jpa"
+        compile "org.springframework.boot:spring-boot-starter-data-redis"
         compile project(':admin-common')
     }
 }
