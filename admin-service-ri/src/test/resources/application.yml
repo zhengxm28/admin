@@ -1,7 +1,7 @@
-server:
-  context-path: /admin
-  port: 9090
-
+# server:
+#   context-path: /admin-service
+#   port: 80
+# 
 spring:  
   datasource:
       url: jdbc:mysql://localhost/admin
