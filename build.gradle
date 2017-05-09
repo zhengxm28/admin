@@ -59,11 +59,17 @@ subprojects {
         compile "org.projectlombok:lombok:1.16.8"
         compile "org.springframework.boot:spring-boot-starter"
         compile "org.springframework.boot:spring-boot-devtools"
+        compile "commons-beanutils:commons-beanutils"
         testCompile "org.springframework.boot:spring-boot-starter-test"
     }
 }
 
 project(':admin-common') {
+    dependencies {
+    }
+}
+
+project(':admin-service-api') {
     dependencies {
     }
 }
@@ -74,11 +80,7 @@ project(':admin-service-ri') {
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
         compile "org.springframework.boot:spring-boot-starter-data-redis"
         compile project(':admin-common')
-    }
-}
-
-project(':admin-service-api') {
-    dependencies {
+        compile project(':admin-service-api')
     }
 }
 

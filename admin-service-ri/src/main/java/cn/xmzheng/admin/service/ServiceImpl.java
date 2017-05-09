@@ -1,5 +1,5 @@
 package cn.xmzheng.admin.service;
 
-public class ServiceImpl {
+public class ServiceImpl implements IService {
 
 }
