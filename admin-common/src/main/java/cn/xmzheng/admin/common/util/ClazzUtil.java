@@ -45,12 +45,12 @@ public class ClazzUtil {
 	}
 	
 	/**
-	 * @param beanProperties
+	 * @param pds
 	 * @return
 	 */
-	public static List<PropertyDescriptor> findDdicProperty(PropertyDescriptor[] beanProperties) {
+	public static List<PropertyDescriptor> findDdicProperty(PropertyDescriptor[] pds) {
 		List<PropertyDescriptor> pdResult = new ArrayList<>();
-		for (PropertyDescriptor pd : beanProperties) {
+		for (PropertyDescriptor pd : pds) {
 			Ddic ddic = pd.getReadMethod().getAnnotation(Ddic.class);
 			if (!ObjectUtils.isEmpty(ddic)) {
 				pdResult.add(pd);
@@ -60,12 +60,12 @@ public class ClazzUtil {
 	}
 	
 	/**
-	 * @param beanProperties
+	 * @param pds
 	 * @param name
 	 * @return
 	 */
-	public static PropertyDescriptor findProperty(PropertyDescriptor[] beanProperties, String name) {
-		for (PropertyDescriptor pd : beanProperties) {
+	public static PropertyDescriptor findProperty(PropertyDescriptor[] pds, String name) {
+		for (PropertyDescriptor pd : pds) {
 			if (pd.getName().equals(name))
 				return pd;
 		}
