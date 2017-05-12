@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import cn.xmzheng.admin.entity.MetadataEntity;
 
 @Repository
-public interface MetadataRepository  extends JpaRepository<MetadataEntity, String> {
+public interface MetadataRepository extends JpaRepository<MetadataEntity, String> {
 
 }
