@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "event_log")
-public class EventLogEntity {
+public class SystemLogEntity {
 	private int id;
 
 	@Id
