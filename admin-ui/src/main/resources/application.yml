@@ -13,3 +13,5 @@ spring:
     time-zone: Asia/Shanghai
   jpa:
     show-sql: true
+  resources:
+    static-locations: classpath:/static/
