@@ -87,7 +87,8 @@ project(':admin-service-ri') {
 project(':admin-ui') {
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-web"
-        compile 'org.webjars.bower:vue:2.3.0'
+        compile 'org.webjars.npm:bootstrap-vue:0.15.0'
+        compile 'org.webjars.npm:babel-polyfill:6.23.0'
         compile project(':admin-service-api')
     }
 }
