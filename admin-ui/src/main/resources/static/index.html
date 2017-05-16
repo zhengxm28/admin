@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>bootstrap-vue example</title>
-    <link type="text/css" rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.6/dist/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="webjars/bootstrap-vue/0.15.0/dist/bootstrap-vue.css"/>
-    
-    <script src="webjars/vue/2.3.2/dist/vue.min.js"></script>
-    <script src="webjars/babel-polyfill/6.23.0/dist/polyfill.min.js"></script>
-    <script src="webjars/tether/1.4.0/dist/js/tether.min.js"></script>
-    <script src="webjars/bootstrap-vue/0.15.0/dist/bootstrap-vue.js"></script>
+<meta charset="utf-8">
+<title>bootstrap-vue example</title>
+<link rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.6/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="webjars/bootstrap-vue/0.15.0/dist/bootstrap-vue.css" />
+
+<script src="webjars/vue/2.3.2/dist/vue.min.js"></script>
+<script src="webjars/babel-polyfill/6.23.0/dist/polyfill.min.js"></script>
+<script src="webjars/tether/1.4.0/dist/js/tether.min.js"></script>
+<script src="webjars/bootstrap-vue/0.15.0/dist/bootstrap-vue.js"></script>
 </head>
 <body>
-	<div>Hello World!</div>
+	<div id="app">
+		<b-alert show> Default Alert </b-alert>
+
+		<b-alert state="success" show> Success Alert </b-alert>
+
+		<b-alert state="danger" dismissible :show="showDismissibleAlert" @dismissed="showDismissibleAlert=false">
+		 Dismissible Alert! 
+		</b-alert>
+
+		<b-alert :show="dismissCountDown" dismissible state="warning" @dismiss-count-down="countDownChanged">
+		 This alert will dismiss after {{dismissCountDown}} seconds... 
+		</b-alert>
+
+		<b-btn @click="showAlert" variant="info" class="m-1">Show alert with count-down timer</b-btn>
+		<b-btn @click="showDismissibleAlert=true" variant="info" class="m-1">
+		 Show dismissible alert ({{showDismissibleAlert?'visible':'hidden'}}) 
+		</b-btn>
+	</div>
+	<script>
+		new Vue({
+		  el: '#app',
+		  data: {
+		    dismissCountDown: null,
+		    showDismissibleAlert: false
+		  },
+		  methods: {
+		    countDownChanged(dismissCountDown) {
+		        this.dismissCountDown = dismissCountDown;
+		      },
+		      showAlert() {
+		        this.dismissCountDown = 5;
+		      }
+		  }
+		})
+	</script>
 </body>
 </html>
