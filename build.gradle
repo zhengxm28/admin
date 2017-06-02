@@ -60,7 +60,7 @@ subprojects {
         compile "org.springframework.boot:spring-boot-devtools"
         compile "org.projectlombok:lombok:1.16.8"
         compile "commons-beanutils:commons-beanutils"
-        compile "org.apache.shiro:shiro-spring-boot-starter:1.4.0"
+//        compile "org.apache.shiro:shiro-spring-boot-starter:1.4.0"
         testCompile "org.springframework.boot:spring-boot-starter-test"
     }
 }

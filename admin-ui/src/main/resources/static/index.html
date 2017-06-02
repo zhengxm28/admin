@@ -13,38 +13,50 @@
 </head>
 <body>
 	<div id="app">
-		<b-alert show> Default Alert </b-alert>
-
-		<b-alert state="success" show> Success Alert </b-alert>
-
-		<b-alert state="danger" dismissible :show="showDismissibleAlert" @dismissed="showDismissibleAlert=false">
-		 Dismissible Alert! 
-		</b-alert>
-
-		<b-alert :show="dismissCountDown" dismissible state="warning" @dismiss-count-down="countDownChanged">
-		 This alert will dismiss after {{dismissCountDown}} seconds... 
-		</b-alert>
-
-		<b-btn @click="showAlert" variant="info" class="m-1">Show alert with count-down timer</b-btn>
-		<b-btn @click="showDismissibleAlert=true" variant="info" class="m-1">
-		 Show dismissible alert ({{showDismissibleAlert?'visible':'hidden'}}) 
-		</b-btn>
+	  <b-navbar toggleable type="inverse" style="background-color: rgba(0, 0, 0, 1);">
+	
+	    <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+	
+	    <b-link class="navbar-brand" to="#">
+	      <span>BootstrapVue</span>
+	    </b-link>
+	
+	    <b-collapse is-nav id="nav_collapse">
+	      
+	      <b-nav is-nav-bar>
+	        <b-nav-item>Support</b-nav-item>
+	        <b-nav-item>Docs</b-nav-item>
+	        <b-nav-item>Contact Us</b-nav-item>
+	      </b-nav>
+	      
+	      <b-nav is-nav-bar class="ml-auto">
+	        
+	        <!-- Navbar dropdowns -->
+	        <b-nav-item-dropdown text="Lang" right>
+	          <b-dropdown-item to="#">EN</b-dropdown-item>
+	          <b-dropdown-item to="#">ES</b-dropdown-item>
+	          <b-dropdown-item to="#">RU</b-dropdown-item>
+	          <b-dropdown-item to="#">FA</b-dropdown-item>
+	        </b-nav-item-dropdown>
+	        
+	        <b-nav-item-dropdown right>
+	          
+	          <!-- Using text slot -->
+	          <template slot="text">
+	            <span style="font-weight: bold;">User</span>
+	          </template>
+	          
+	          <b-dropdown-item to="#">Profile</b-dropdown-item>
+	          <b-dropdown-item to="#">Signout</b-dropdown-item>
+	        </b-nav-item-dropdown>
+	       
+	      </b-nav>
+	    </b-collapse>
+	  </b-navbar>
 	</div>
 	<script>
 		new Vue({
-		  el: '#app',
-		  data: {
-		    dismissCountDown: null,
-		    showDismissibleAlert: false
-		  },
-		  methods: {
-		    countDownChanged(dismissCountDown) {
-		        this.dismissCountDown = dismissCountDown;
-		      },
-		      showAlert() {
-		        this.dismissCountDown = 5;
-		      }
-		  }
+		  el: '#app'
 		})
 	</script>
 </body>
