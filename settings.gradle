@@ -20,5 +20,6 @@ rootProject.name = 'admin'
 
 include 'admin-common'
 include 'admin-ui'
+include 'admin-controller'
 include 'admin-service-api'
 include 'admin-service-ri'
