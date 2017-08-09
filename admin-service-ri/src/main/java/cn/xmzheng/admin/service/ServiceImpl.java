@@ -1,13 +1,15 @@
 package cn.xmzheng.admin.service;
 
-import cn.xmzheng.admin.constants.Operation;
+import org.springframework.stereotype.Service;
 
+import cn.xmzheng.admin.domain.DtoModel;
+
+@Service
 public class ServiceImpl implements IService {
 
 	@Override
-	public void excute(Operation operator) {
-		// TODO Auto-generated method stub
-		
+	public DtoModel<?> excute(DtoModel<?> model) {
+		return null;
 	}
 
 }

@@ -1,7 +1,7 @@
 package cn.xmzheng.admin.service;
 
-import cn.xmzheng.admin.constants.Operation;
+import cn.xmzheng.admin.domain.DtoModel;
 
 public interface IService {
-	void excute(Operation operator);
+	DtoModel<?> excute(DtoModel<?> model);
 }

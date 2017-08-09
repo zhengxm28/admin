@@ -72,6 +72,7 @@ project(':admin-common') {
 
 project(':admin-service-api') {
     dependencies {
+        compile "org.springframework.boot:spring-boot-starter-web"
     	compile project(':admin-common')
     }
 }
@@ -88,8 +89,8 @@ project(':admin-service-ri') {
 
 project(':admin-controller') {
     dependencies {
-        compile "org.springframework.boot:spring-boot-starter-web"
         compile project(':admin-service-api')
+        compile project(':admin-service-ri')
     }
 }
 
