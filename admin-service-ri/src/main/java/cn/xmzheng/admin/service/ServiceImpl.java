@@ -8,7 +8,7 @@ import cn.xmzheng.admin.domain.DtoModel;
 public class ServiceImpl implements IService {
 
 	@Override
-	public DtoModel<?> excute(DtoModel<?> model) {
+	public DtoModel excute(DtoModel model) {
 		return null;
 	}
 

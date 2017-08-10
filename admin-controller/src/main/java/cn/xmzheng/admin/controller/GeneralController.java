@@ -1,13 +1,10 @@
 package cn.xmzheng.admin.controller;
 
-import java.net.URI;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.xmzheng.admin.domain.DtoModel;
@@ -19,17 +16,19 @@ public class GeneralController {
 	@Autowired
 	IService service;
 
-	@RequestMapping("/{module}/{mode}")
-	ResponseEntity<?> generalAction(@RequestBody RequestEntity<DtoModel<?>> request) {
-		URI url = request.getUrl();
-		DtoModel<?> model = request.getBody();
-		if (HttpMethod.GET.equals(request.getMethod())) {
-			model.setAccess(true);
-		} else {
-//			model.setMode(mode);
-			url.toString();
-		}
-		DtoModel<?> result = service.excute(request.getBody());
+	@PostMapping("/{module}/{mode}")
+	ResponseEntity<?> general(@PathVariable String module, @PathVariable String mode, DtoModel inModel) {
+		inModel.setAccess(false);
+		DtoModel result = service.excute(inModel);
+		return DtoConvert.convertResponse(result);
+	}
+
+	@GetMapping("/{module}/list/{page}")
+	ResponseEntity<?> generalAccess(@PathVariable String module, @PathVariable int page,
+			DtoModel inModel) {
+		inModel.setCurrentPage(page);
+		inModel.setAccess(true);
+		DtoModel result = service.excute(inModel);
 		return DtoConvert.convertResponse(result);
 	}
 }
