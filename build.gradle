@@ -86,6 +86,22 @@ project(':admin-service-ri') {
     }
 }
 
+project(':admin-system-api') {
+    dependencies {
+    	compile project(':admin-common')
+    }
+}
+
+project(':admin-system-ri') {
+    dependencies {
+    	compile "mysql:mysql-connector-java"
+        compile "org.springframework.boot:spring-boot-starter-data-jpa"
+        compile "org.springframework.boot:spring-boot-starter-data-redis"
+        compile project(':admin-common')
+        compile project(':admin-system-api')
+    }
+}
+
 project(':admin-controller') {
     dependencies {
     	compile "org.springframework.boot:spring-boot-starter-web"
