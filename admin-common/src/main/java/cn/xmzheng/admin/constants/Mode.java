@@ -1,6 +1,6 @@
 package cn.xmzheng.admin.constants;
 
-public class Operation {
+public class Mode {
 	public enum ACCESS {
 		FINDP, FINDAll;
 	}

@@ -42,7 +42,7 @@ subprojects {
     }
 
     test {
-        include "**/controller/**", "**/service/**", "**/util/**", "**/context/**"
+        include "**/controller/**", "**/service/**", "**/util/**"
     }
 
     repositories {
@@ -70,43 +70,21 @@ project(':admin-common') {
     }
 }
 
-project(':admin-service-api') {
+project(':admin-module') {
     dependencies {
     	compile project(':admin-common')
-    }
-}
-
-project(':admin-service-ri') {
-    dependencies {
     	compile "mysql:mysql-connector-java"
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
         compile "org.springframework.boot:spring-boot-starter-data-redis"
-        compile project(':admin-common')
-        compile project(':admin-service-api')
     }
 }
 
-project(':admin-system-api') {
+project(':admin-system') {
     dependencies {
     	compile project(':admin-common')
-    }
-}
-
-project(':admin-system-ri') {
-    dependencies {
     	compile "mysql:mysql-connector-java"
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
         compile "org.springframework.boot:spring-boot-starter-data-redis"
-        compile project(':admin-common')
-        compile project(':admin-system-api')
-    }
-}
-
-project(':admin-controller') {
-    dependencies {
-    	compile "org.springframework.boot:spring-boot-starter-web"
-        compile project(':admin-service-api')
-        compile project(':admin-service-ri')
     }
 }
 

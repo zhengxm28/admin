@@ -15,6 +15,6 @@ public @Data class Metadata {
 	private int sortNo; // 排序
 	private Class<?> entityJavaType; // 数据层class
 	private PropertyDescriptor[] pds; // 数据层pd描述
-	private Object repositoryBean; // repository类对单例
+	private Object repositoryBean; // repository类
 	private MultiMap ddicInfo = new MultiValueMap(); // 数据字典信息
 }

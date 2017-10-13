@@ -14,7 +14,7 @@ public @Data class DtoModel {
 	private int currentPage;
 	private long total;
 
-	enum Operator {
+	enum Mode {
 
 	}
 }
