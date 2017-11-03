@@ -11,7 +11,7 @@ apply plugin: 'java'
     
 buildscript {
     ext {
-        springBootVersion = '1.5.6.RELEASE'
+        springBootVersion = '1.5.8.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -57,7 +57,7 @@ subprojects {
 
     dependencies {
         compile "org.springframework.boot:spring-boot-starter"
-        compile "org.springframework.boot:spring-boot-devtools"
+//        compile "org.springframework.boot:spring-boot-devtools"
         compile "org.projectlombok:lombok:1.16.18"
         compile "commons-beanutils:commons-beanutils"
 //        compile "org.apache.shiro:shiro-spring-boot-starter:1.4.0"
@@ -92,8 +92,8 @@ project(':admin-ui') {
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-web"
         compile 'org.webjars:webjars-locator:0.32'
-        compile 'org.webjars.npm:bootstrap-vue:0.15.0'
-        compile 'org.webjars.npm:babel-polyfill:6.23.0'
+        compile 'org.webjars.npm:vue:2.5.2'
+//        compile 'org.webjars.npm:iview:2.3.2'
     }
 }
 
