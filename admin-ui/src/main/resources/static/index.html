@@ -27,6 +27,34 @@
 		<p>{{ message }}</p>
 		<input v-model="message">
 	</div>
+	<div id="todo-list-example">
+		<input
+		  v-model="newTodoText"
+		  v-on:keyup.enter="addNewTodo"
+		  placeholder="Add a todo"
+		>
+		<ul>
+		  <li
+		    is="todo-item"
+		    v-for="(todo, index) in todos"
+		    v-bind:key="todo.id"
+		    v-bind:title="todo.title"
+		    v-on:remove="todos.splice(index, 1)"
+		  ></li>
+	  </ul>
+	</div>
+	<div id="example-1">
+	  <button v-on:click="counter += 1">增加 1</button>
+	  <p>这个按钮被点击了 {{ counter }} 次。</p>
+	</div>
+	<div id="example-2">
+	  <!-- `greet` 是在下面定义的方法名 -->
+	  <button v-on:click="greet">Greet</button>
+	</div>
+	<div id="example-3">
+	  <button v-on:click="say('hi')">Say hi</button>
+	  <button v-on:click="say('what')">Say what</button>
+	</div>
 	<script>
 		var app = new Vue({
 			el : '#app',
@@ -74,6 +102,70 @@
 			data : {
 				message : 'Hello Vue!'
 			}
+		})
+		
+		Vue.component(
+			'todo-item', {
+				template : '\ <li>\ {{ title }}\ <button v-on:click="$emit(\'remove\')">X</button>\ ',
+				props : [ 'title' ]
+			}
+		)
+		new Vue({
+			el : '#todo-list-example',
+			data : {
+				newTodoText : '',
+				todos : [ {
+					id : 1,
+					title : 'Do the dishes',
+				}, {
+					id : 2,
+					title : 'Take out the trash',
+				}, {
+					id : 3,
+					title : 'Mow the lawn'
+				} ],
+				nextTodoId : 4
+			},
+			methods : {
+				addNewTodo : function() {
+					this.todos.push({
+						id : this.nextTodoId++,
+						title : this.newTodoText
+					})
+					this.newTodoText = ''
+				}
+			}
+		})
+		var example1 = new Vue({
+		  el: '#example-1',
+		  data: {
+		    counter: 0
+		  }
+		})
+		var example2 = new Vue({
+		  el: '#example-2',
+		  data: {
+		    name: 'Vue.js'
+		  },
+		  // 在 `methods` 对象中定义方法
+		  methods: {
+		    greet: function (event) {
+		      // `this` 在方法里指当前 Vue 实例
+		      alert('Hello ' + this.name + '!')
+		      // `event` 是原生 DOM 事件
+		      if (event) {
+		        alert(event.target.tagName)
+		      }
+		    }
+		  }
+		})
+		new Vue({
+		  el: '#example-3',
+		  methods: {
+		    say: function (message) {
+		      alert(message)
+		    }
+		  }
 		})
 	</script>
 </body>
