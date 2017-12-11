@@ -72,18 +72,32 @@ project(':admin-common') {
 }
 
 project(':admin-module') {
+	dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.4.0.RELEASE'
+        }
+    }
     dependencies {
     	compile project(':admin-common')
     	compile "mysql:mysql-connector-java"
+    	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    	compile("org.springframework.boot:spring-boot-starter-actuator")
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
         compile "org.springframework.boot:spring-boot-starter-data-redis"
     }
 }
 
 project(':admin-system') {
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.4.0.RELEASE'
+        }
+    }
     dependencies {
     	compile project(':admin-common')
     	compile "mysql:mysql-connector-java"
+    	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    	compile("org.springframework.boot:spring-boot-starter-actuator")
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
         compile "org.springframework.boot:spring-boot-starter-data-redis"
     }

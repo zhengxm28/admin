@@ -2,7 +2,9 @@ server:
   context-path: /admin-system
   port: 9091
 
-spring:  
+spring: 
+  application:
+    name: admin-system
   datasource:
       url: jdbc:mysql://localhost/admin-system?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
@@ -26,3 +28,10 @@ spring:
     timeout: 0
   cache:
     cache-names: admin:system
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/    # 指定注册中心的地址
+  instance:
+    preferIpAddress: true
