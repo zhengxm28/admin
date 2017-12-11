@@ -25,4 +25,4 @@ spring:
     port: 6379 # Redis server port.
     timeout: 0
   cache:
-    cache-names: admin:system
+    cache-names: admin:module
