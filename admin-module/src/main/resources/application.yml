@@ -24,3 +24,5 @@ spring:
       min-idle: 0 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
     port: 6379 # Redis server port.
     timeout: 0
+  cache:
+    cache-names: admin:system
