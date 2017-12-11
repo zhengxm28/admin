@@ -1,6 +1,6 @@
 # admin 后台管理系统
 * skill stacks 
-  (gradle, spring-boot, spring-data-jpa, shiro, disrupt, 
+  (gradle, spring-boot, spring-data-jpa, spring-session, disrupt, 
   jsr303, redis, mariadb, 
   thymeleaf, vue.js, bootstrap, webjars)
 * spring-cloud(划分成新项目: micro-utility)

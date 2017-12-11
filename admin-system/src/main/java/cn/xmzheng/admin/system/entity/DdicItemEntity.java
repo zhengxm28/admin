@@ -3,12 +3,14 @@ package cn.xmzheng.admin.system.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import lombok.Data;
 
 @Entity(name = "ddic_item")
 public @Data class DdicItemEntity {
 	@GeneratedValue
+	@Id
 	private int id;
 	private int categoryId;
 	private String key;
