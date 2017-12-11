@@ -29,7 +29,7 @@ public class Application {
 	
 	@GetMapping("/test")
 	public String test(HttpSession session) {
-		Cache cache = cacheManager.getCache("spring:session:sessions");
+		Cache cache = cacheManager.getCache("admin:system");
 		cache.put(session.getId(), "test");
 		Set<Object> keys = template.opsForHash().keys("spring:session:sessions:" + session.getId());
 		System.out.println(keys);
