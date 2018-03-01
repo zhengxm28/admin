@@ -11,7 +11,7 @@ public @Data class Metadata {
 	private String module; // 模块
 	private String cnName; // 中文名称
 	private String tableName; // 对应表名
-	private int onff; // 状态标识位
+	private int onOff; // 状态标识位
 	private int sortNo; // 排序
 	private Class<?> entityJavaType; // 数据层class
 	private PropertyDescriptor[] pds; // 数据层pd描述

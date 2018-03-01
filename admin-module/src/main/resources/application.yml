@@ -1,5 +1,5 @@
 server:
-  context-path: /admin-module
+  context-path: /admin/module
   port: 9090
 
 spring:  
@@ -26,10 +26,3 @@ spring:
     timeout: 0
   cache:
     cache-names: admin:module
-    
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/    # 指定注册中心的地址
-  instance:
-    preferIpAddress: true

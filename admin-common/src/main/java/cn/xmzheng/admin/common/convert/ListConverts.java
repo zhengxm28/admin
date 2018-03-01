@@ -30,7 +30,7 @@ public class ListConverts<S, T> implements Converter<List<S>, List<T>> {
 	}
 
 	public static <S, T> ListConverts<S, T> newInstance(Class<T> clazz) {
-		return new ListConverts<S, T>(clazz);
+		return new ListConverts<>(clazz);
 	}
 
 }

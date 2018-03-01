@@ -1,4 +1,4 @@
-package cn.xmzheng.admin.system.service;
+package cn.xmzheng.admin.api;
 
 import org.springframework.stereotype.Service;
 

@@ -14,5 +14,5 @@ public @Data class MetadataEntity {
 	private String tableName;
 	private int sortNo;
 	@Column(name = "switch")
-	private int onoff;
+	private int onOff;
 }
