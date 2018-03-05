@@ -95,6 +95,7 @@ project(':admin-system') {
     }
     dependencies {
     	compile project(':admin-common')
+    	compile "org.modelmapper:modelmapper:1.1.0"
     	compile "mysql:mysql-connector-java"
     	compile("org.springframework.cloud:spring-cloud-starter-feign")
     	compile("org.springframework.boot:spring-boot-starter-actuator")
