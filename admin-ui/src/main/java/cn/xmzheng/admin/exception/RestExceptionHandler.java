@@ -17,7 +17,6 @@ import cn.xmzheng.admin.domain.RestMessage;
 public class RestExceptionHandler {
 	private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
 	private static final String UNEXPECTED_ERROR = "Exception.unexpected";
-	private static final String NULLPOINTER_ERROR = "Exception.null";
 	private static final String AUTHENTICATION_ERROR = "Exception.unauthorized";
 
 	@Autowired
@@ -34,13 +33,6 @@ public class RestExceptionHandler {
 		String errorMessage = messageSource.getMessage(AUTHENTICATION_ERROR, null, locale);
 		logger.error(errorMessage, ex.getCause());
 		return RestMessage.buildFail(HttpStatus.UNAUTHORIZED.value(), errorMessage);
-	}
-
-	@ExceptionHandler(NullPointerException.class)
-	public RestMessage<String> handleNullPointerException(NullPointerException ex, Locale locale) {
-		String errorMessage = messageSource.getMessage(NULLPOINTER_ERROR, null, locale);
-		logger.error(errorMessage, ex.getCause());
-		return RestMessage.buildFail(HttpStatus.BAD_REQUEST.value(), errorMessage);
 	}
 
 	@ExceptionHandler(Exception.class)
