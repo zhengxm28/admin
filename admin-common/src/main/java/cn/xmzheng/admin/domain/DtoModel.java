@@ -8,13 +8,9 @@ public @Data class DtoModel {
 
 	// 动作参数
 	private String mode;
-	private boolean isAccess;
+	private boolean isQuery;
 
 	// 分页参数
 	private int currentPage;
 	private long total;
-
-	enum Mode {
-
-	}
 }

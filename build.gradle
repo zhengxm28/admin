@@ -59,7 +59,7 @@ subprojects {
         compile "org.springframework.boot:spring-boot-starter"
 //        compile "org.springframework.boot:spring-boot-devtools"
         compile "org.springframework.boot:spring-boot-starter-web"
-        compile "org.springframework.session:spring-session"
+//        compile "org.springframework.session:spring-session"
         compile "org.projectlombok:lombok:1.16.18"
         compile "commons-beanutils:commons-beanutils"
         testCompile "org.springframework.boot:spring-boot-starter-test"
@@ -83,7 +83,7 @@ project(':admin-module') {
     	compile("org.springframework.cloud:spring-cloud-starter-feign")
     	compile("org.springframework.boot:spring-boot-starter-actuator")
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
-        compile "org.springframework.boot:spring-boot-starter-data-redis"
+//        compile "org.springframework.boot:spring-boot-starter-data-redis"
     }
 }
 
@@ -99,7 +99,7 @@ project(':admin-system') {
     	compile("org.springframework.cloud:spring-cloud-starter-feign")
     	compile("org.springframework.boot:spring-boot-starter-actuator")
         compile "org.springframework.boot:spring-boot-starter-data-jpa"
-        compile "org.springframework.boot:spring-boot-starter-data-redis"
+//        compile "org.springframework.boot:spring-boot-starter-data-redis"
     }
 }
 
@@ -110,6 +110,8 @@ project(':admin-ui') {
         }
     }
     dependencies {
+    	compile project(':admin-common')
+        compile("org.apache.shiro:shiro-spring-boot-starter:1.4.0")
     	compile("org.springframework.cloud:spring-cloud-starter-feign")
         compile 'org.webjars:webjars-locator:0.32'
         compile 'org.webjars.npm:vue:2.5.2'

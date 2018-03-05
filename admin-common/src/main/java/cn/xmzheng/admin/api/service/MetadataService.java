@@ -1,4 +1,4 @@
-package cn.xmzheng.admin.api;
+package cn.xmzheng.admin.api.service;
 
 public interface MetadataService {
 
