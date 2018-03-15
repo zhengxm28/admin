@@ -12,7 +12,11 @@ import org.springframework.util.ObjectUtils;
 import cn.xmzheng.admin.common.annotation.Ddic;
 
 public class ClazzUtil {
-	private final static Logger logger = LoggerFactory.getLogger(ClazzUtil.class);
+	private ClazzUtil() {
+	}
+
+	private static final Logger logger = LoggerFactory.getLogger(ClazzUtil.class);
+
 	/**
 	 * @param javaType
 	 * @return
@@ -27,13 +31,13 @@ public class ClazzUtil {
 			logger.error(javaType + " not exist");
 			throw new ProviderNotFoundException("javaType not exist");
 		}
-		
+
 	}
 
 	/**
 	 * @param entityClass
 	 * @return
-	 * @throws ClassNotFound 
+	 * @throws ClassNotFound
 	 */
 	public static Class<?> getJavaType(String entityClass) {
 		try {
@@ -43,7 +47,7 @@ public class ClazzUtil {
 			throw new ProviderNotFoundException("entityClass not exist");
 		}
 	}
-	
+
 	/**
 	 * @param pds
 	 * @return
@@ -58,7 +62,7 @@ public class ClazzUtil {
 		}
 		return pdResult;
 	}
-	
+
 	/**
 	 * @param pds
 	 * @param name
@@ -69,6 +73,7 @@ public class ClazzUtil {
 			if (pd.getName().equals(name))
 				return pd;
 		}
-		return null;
+		logger.error("{}: field not exist", name);
+		throw new ProviderNotFoundException("field not exist");
 	}
 }

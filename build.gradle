@@ -68,6 +68,7 @@ subprojects {
 
 project(':admin-common') {
     dependencies {
+    	compile("org.springframework.data:spring-data-commons")
     }
 }
 

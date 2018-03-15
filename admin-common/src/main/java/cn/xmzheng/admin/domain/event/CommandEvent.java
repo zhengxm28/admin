@@ -1,10 +1,15 @@
 package cn.xmzheng.admin.domain.event;
 
-public class CommandEvent implements Event {
+import lombok.Data;
 
+@Data
+public class CommandEvent<T> implements Event {
+	private String operation;
+	
 	@Override
 	public boolean isQuery() {
 		return false;
 	}
 
+	
 }
