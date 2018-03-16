@@ -1,0 +1,3 @@
+sql:
+  system:
+    day2cycle-of-api-tracing: select * from api_tracing where cycle='day' and cycle_zone>=? and cycle_zone<?       
