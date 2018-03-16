@@ -1,4 +1,4 @@
-package cn.xmzheng.admin.system.entity;
+package cn.xmzheng.admin.system.dao.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

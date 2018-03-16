@@ -1,4 +1,4 @@
-package cn.xmzheng.admin.system.entity;
+package cn.xmzheng.admin.system.dao.entity;
 
 import java.sql.Date;
 
@@ -14,7 +14,7 @@ public @Data class SysLogEntity {
 	@Id
 	private long id;
 	private String tableName;
-	private String mode;
+	private String event;
 	private String operator;
 	private Date logTime;
 	private String prePersist, postPersist;
